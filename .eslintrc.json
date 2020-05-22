@@ -31,6 +31,7 @@
     "no-unused-expressions": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "import/prefer-default-export": "off",
+    "react/self-closing-comp": "off",
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       {
