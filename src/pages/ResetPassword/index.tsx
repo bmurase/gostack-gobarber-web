@@ -1,6 +1,7 @@
 import React, { useRef, useCallback } from 'react';
 import * as Yup from 'yup';
-import { FormHandles, Form } from '@unform/core';
+import { FormHandles } from '@unform/core';
+import { Form } from '@unform/web';
 import { useHistory } from 'react-router-dom';
 import { FiLock } from 'react-icons/fi';
 import { useToast } from '../../hooks/toast';
@@ -82,6 +83,7 @@ const ResetPassword: React.FC = () => {
           </Form>
         </AnimationContainer>
       </Content>
+      <Background />
     </Container>
   );
 };
