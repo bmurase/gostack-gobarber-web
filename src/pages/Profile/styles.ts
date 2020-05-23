@@ -2,11 +2,6 @@ import styled from 'styled-components';
 import { shade } from 'polished';
 
 export const Container = styled.div`
-  /* height: 100vh; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: stretch; */
-
   > header {
     height: 144px;
     background: #28262e;
