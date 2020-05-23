@@ -1,7 +1,7 @@
 import React, { useRef, useCallback } from 'react';
 import * as Yup from 'yup';
 import { FormHandles, Form } from '@unform/core';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { FiLock } from 'react-icons/fi';
 import { useToast } from '../../hooks/toast';
 import getValidationErrors from '../../utils/getValidationErrors';
