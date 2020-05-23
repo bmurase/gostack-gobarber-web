@@ -61,17 +61,40 @@ const Dashboard: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    const { month, year } = {
+      month: currentMonth.getMonth() + 1,
+      year: currentMonth.getFullYear(),
+    };
+
     api
       .get(`providers/${user.id}/month-availability`, {
         params: {
-          month: currentMonth.getMonth() + 1,
-          year: currentMonth.getFullYear(),
+          month,
+          year,
         },
       })
       .then(response => {
         setMonthAvailability(response.data);
       });
   }, [currentMonth, user]);
+
+  useEffect(() => {
+    const firstAvailableDate = monthAvailability.find(
+      day => day.available === true,
+    );
+
+    if (!firstAvailableDate) {
+      return;
+    }
+
+    const date = new Date(
+      currentMonth.getFullYear(),
+      currentMonth.getMonth(),
+      firstAvailableDate.day,
+    );
+
+    setSelectedDate(date);
+  }, [currentMonth, monthAvailability]);
 
   useEffect(() => {
     api
